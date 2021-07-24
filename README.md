@@ -1,6 +1,14 @@
 # Spotitool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12. Using [MaterialUI](https://material.angular.io/) and [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+
+## Prod
+Go to [spotitool.herokuapp.com](https://spotitool.herokuapp.com/)
+
+## Dev Setup
+- Register your application with Spotify following the instructions in their [Quick Start page](https://developer.spotify.com/documentation/web-api/quick-start/)
+- Add `http://localhost:4200/` as a redirect URI
+- After cloning this repository, do `npm install`
 
 ## Development server
 
