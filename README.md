@@ -7,6 +7,7 @@ Go to [spotitool.herokuapp.com](https://spotitool.herokuapp.com/)
 
 ## Dev Setup
 - Register your application with Spotify following the instructions in their [Quick Start page](https://developer.spotify.com/documentation/web-api/quick-start/)
+- Due to recent changes in [Spotify's policies](https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/), you will need to add your users' accounts in your Dashboard as this app will be in Development mode
 - Add `http://localhost:4200/` as a redirect URI
 - After cloning this repository, do `npm install`
 
