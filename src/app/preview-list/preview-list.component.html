@@ -1,0 +1,47 @@
+<form class="song-form" (ngSubmit)="createPlaylist(playlistName)">
+  <mat-form-field appearance="fill">
+    <mat-label>Playlist Name</mat-label>
+    <input
+      matInput
+      [formControl]="nameFormControl"
+      [errorStateMatcher]="matcher"
+      placeholder="Ex. Awesome Mix Vol 1"
+      #playlistName
+    />
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+      Please enter playlist name
+    </mat-error>
+  </mat-form-field>
+  <mat-selection-list class="selectionList" [multiple]="false">
+    <mat-list-item *ngFor="let song of preview">
+      <span matLine>{{ song.name }}</span>
+      <span matLine>{{ song.artist }}</span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" type="button">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="deleteSong(song)">
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+        <a mat-menu-item [href]="song.href" target="_blank">
+          <mat-icon>open_in_new</mat-icon>
+          <span>Listen</span>
+        </a>
+      </mat-menu>
+    </mat-list-item>
+  </mat-selection-list>
+  <mat-error *ngIf="preview.length === 0">
+    Select at least one song!
+  </mat-error>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="
+      preview.length === 0 || nameFormControl.hasError('required') || loading
+    "
+  >
+    Create!
+  </button>
+</form>

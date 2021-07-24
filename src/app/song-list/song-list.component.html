@@ -1,0 +1,39 @@
+<div class="songPage">
+  <h1>
+    Hi {{ username }}
+    <mat-icon *ngIf="special" color="accent">favorite</mat-icon>
+  </h1>
+  <div class="panels">
+    <div class="left-panel">
+      <mat-checkbox
+        labelPosition="before"
+        class="checkbox"
+        (change)="selectAll($event.checked, songList)"
+        >Select All</mat-checkbox
+      >
+      <mat-selection-list #songList class="selectionList">
+        <mat-list-option *ngFor="let song of songs" [value]="song.id">
+          <h3>{{ song.name }}</h3>
+          <span>{{ song.artist }}</span>
+        </mat-list-option>
+      </mat-selection-list>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="getSongs()"
+        [disabled]="loadingSongs"
+      >
+        Load More<mat-icon *ngIf="loadingSongs"
+          ><mat-spinner color="accent" diameter="20"> </mat-spinner
+        ></mat-icon>
+      </button>
+    </div>
+    <a mat-raised-button color="primary" (click)="previewSongs(songList)"
+      >Prev-></a
+    >
+    <app-preview-list
+      class="right-panel"
+      [preview]="preview"
+    ></app-preview-list>
+  </div>
+</div>

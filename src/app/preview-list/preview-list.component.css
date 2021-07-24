@@ -1,0 +1,11 @@
+.selectionList {
+  height: 100%;
+  overflow-y: auto;
+}
+.song-form {
+  height: 100%;
+  float: right;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}

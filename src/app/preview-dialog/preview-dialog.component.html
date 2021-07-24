@@ -1,0 +1,11 @@
+<h1 *ngIf="playlist" mat-dialog-title>Your Playlist has been created!</h1>
+<div mat-dialog-content>
+  <iframe
+    [src]="uri | safe"
+    width="300"
+    height="380"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"
+  ></iframe>
+</div>
