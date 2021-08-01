@@ -1,5 +1,10 @@
 <div *ngIf="!hasToken; else songList" class="main-page">
   <a mat-raised-button [href]="url" color="primary">Link to Spotify</a>
+  <small *ngIf="devMode">
+    This app is in Development Mode, please contact
+    <a href="mailto:chris.melendezg@gmail.com">the admin</a> with your Spotify
+    email to add you to the list of test users
+  </small>
 </div>
 <ng-template #songList>
   <app-song-list></app-song-list>

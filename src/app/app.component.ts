@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'spotitool';
   url: string;
   hasToken: boolean = false;
+  devMode: boolean = true;
 
   constructor(private spotifyService: SpotifyService) {}
 
